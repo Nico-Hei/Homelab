@@ -39,6 +39,6 @@ an issue as none of my services come close to exceeding what the hardware can ha
   - SAS Card
   - Blu-ray Drive
  
-## 4. Network
+## 4. Network & Domain
 ## 5. Software
 ## Feel free to contact me
