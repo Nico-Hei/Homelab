@@ -59,5 +59,10 @@ an issue as none of my services come close to exceeding what the hardware can ha
 - Setup Actual budget manager
 - Setup Termux ssh manager
 
-## Feel free to contact me
-[![Static Badge](https://img.shields.io/badge/Instagram-FF0069?style=for-the-badge&logo=Instagram&logoColor=white)](https://www.instagram.com/nicogabsnichtmehr/)
+---
+If you have any questions about service configurations, errors you encountered
+during setup, or recommendations for this repo, feel free to reach out via
+the contacts on my profile.
+
+[![Static Badge](https://img.shields.io/badge/Profile-E36256?style=for-the-badge)](https://github.com/Nico-Hei)
+
