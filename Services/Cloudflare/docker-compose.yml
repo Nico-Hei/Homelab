@@ -1,0 +1,13 @@
+services:
+  cloudflare:
+    image: oznu/cloudflare-ddns:latest
+    container_name: Cloudflare
+    restart: unless-stopped
+    environment:
+      - API_KEY=${API_KEY}
+      - ZONE=nicoshl.de
+      - SUBDOMAIN=vpn
+      - PROXIED=false
+      - RRTYPE=A
+      - CUSTOM_LOOKUP_CMD=curl -4 -s https://api.ipify.org # Never use "" in this line
+    #network_mode: host

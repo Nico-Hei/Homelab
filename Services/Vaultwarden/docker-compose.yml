@@ -1,0 +1,11 @@
+services:
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: Vaultwarden
+    restart: unless-stopped
+    environment:
+      DOMAIN: "http://pwd.nicoshl.de"
+    volumes:
+      - ./data:/data
+    ports:
+      - "8080:80"

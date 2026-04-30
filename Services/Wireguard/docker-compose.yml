@@ -1,0 +1,25 @@
+services:
+  wireguard:
+    image: lscr.io/linuxserver/wireguard:latest
+    container_name: Wireguard
+    cap_add:
+      - NET_ADMIN
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Berlin
+      - SERVERURL=vpn.nicoshl.de
+      - SERVERPORT=32193
+      - PEERS=HandyNico,TabletNico
+      - PEERDNS=192.168.1.1
+      - INTERNAL_SUBNET=10.13.13.0
+      - PERSISTENTKEEPALIVE_PEERS=all
+      - LOG_CONFS=true
+    volumes:
+      - ./data/config:/config
+      #- /lib/modules:/lib/modules #optional
+    ports:
+      - 32193:51820/udp
+    sysctls:
+      - net.ipv4.conf.all.src_valid_mark=1
+    restart: unless-stopped
