@@ -40,5 +40,24 @@ an issue as none of my services come close to exceeding what the hardware can ha
   - Blu-ray Drive
  
 ## 4. Network & Domain
-## 5. Software
+## 5. Services [^services]
+[![Static Badge](https://img.shields.io/badge/Homarr-Dashboard-FA5252?style=for-the-badge&logo=Homarr&logoColor=white)](./Services/Homarr/Homarr.md)
+[![Static Badge](https://img.shields.io/badge/Cloudflare-DynDNS-F38020?style=for-the-badge&logo=Cloudflare&logoColor=white)](./Services/Cloudflare/Cloudflare.md)
+[![Static Badge](https://img.shields.io/badge/Backrest-Snapshots-3B3737?style=for-the-badge)](./Services/Backrest/Backrest.md)
+[![Static Badge](https://img.shields.io/badge/Immich-Photos-4250AF?style=for-the-badge&logo=Immich&logoColor=white)](./Services/Immich/Immich.md)
+[![Static Badge](https://img.shields.io/badge/Memos-Notes-E0D484?style=for-the-badge&logo=Note&logoColor=white)](./Services/Memos/Memos.md)
+[![Static Badge](https://img.shields.io/badge/Nginx%20Proxy%20Manager-Reverse%20Proxy-F15833?style=for-the-badge&logo=Nginx%20Proxy%20Manager&logoColor=white)](./Services/NginxProxyManager/NginxProxyManager.md)
+[![Static Badge](https://img.shields.io/badge/Radicale-Calendar%20%26%20Contacts-853C1E?style=for-the-badge&logo=Webpack&logoColor=white)](./Services/Radicale/Radicale.md)
+[![Static Badge](https://img.shields.io/badge/Wireguard-VPN-88171A?style=for-the-badge&logo=Wireguard&logoColor=white)](./Services/Wireguard/Wireguard.md)
+[![Static Badge](https://img.shields.io/badge/Samba-File%20Share-489A9C?style=for-the-badge)](./Services/Samba/Samba.md)
+[![Static Badge](https://img.shields.io/badge/Vaultwarden-Password%20Manager-000000?style=for-the-badge&logo=Vaultwarden&logoColor=white)](./Services/Vaultwarden/Vaultwarden.md)
+[![Static Badge](https://img.shields.io/badge/Cockpit-VM%20Manager-0066CC?style=for-the-badge&logo=Cockpit&logoColor=white)](./Services/Cockpit/Cockpit.md)
+
+[^services]: Open service details by clicking on the service badge
+## 6. Todo
+- Setup docker networks between containers correctly, currently only the bridge and host network are being utilized.
+- Setup Actual budget manager
+- Setup Termux ssh manager
+
 ## Feel free to contact me
+[![Static Badge](https://img.shields.io/badge/Instagram-FF0069?style=for-the-badge&logo=Instagram&logoColor=white)](https://www.instagram.com/nicogabsnichtmehr/)
