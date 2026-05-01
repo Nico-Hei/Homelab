@@ -17,7 +17,6 @@ environment:
   - SUBDOMAIN=vpn
   - PROXIED=false
   - RRTYPE=A
-  - CUSTOM_LOOKUP_CMD=curl -4 -s https://api.ipify.org # Never use "" in this line
 ```
 
 `RRTYPE=A` specifies the use of an A-Record, meaning we are using IPv4 addresses.
