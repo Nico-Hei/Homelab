@@ -42,7 +42,7 @@ an issue as none of my services come close to exceeding what the hardware can ha
 ## 4. Network & Domain
 ## 5. Services [^services]
 [![Static Badge](https://img.shields.io/badge/Homarr-Dashboard-FA5252?style=for-the-badge&logo=Homarr&logoColor=white)](./Services/Homarr/Homarr.md)
-[![Static Badge](https://img.shields.io/badge/Cloudflare-DynDNS-F38020?style=for-the-badge&logo=Cloudflare&logoColor=white)](./Services/Cloudflare/Cloudflare.md)
+[![Static Badge](https://img.shields.io/badge/Cloudflare-DDNS-F38020?style=for-the-badge&logo=Cloudflare&logoColor=white)](./Services/Cloudflare/Cloudflare.md)
 [![Static Badge](https://img.shields.io/badge/Backrest-Snapshots-3B3737?style=for-the-badge)](./Services/Backrest/Backrest.md)
 [![Static Badge](https://img.shields.io/badge/Immich-Photos-4250AF?style=for-the-badge&logo=Immich&logoColor=white)](./Services/Immich/Immich.md)
 [![Static Badge](https://img.shields.io/badge/Memos-Notes-E0D484?style=for-the-badge&logo=Note&logoColor=white)](./Services/Memos/Memos.md)
