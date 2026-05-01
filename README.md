@@ -62,7 +62,4 @@ an issue as none of my services come close to exceeding what the hardware can ha
 ---
 If you have any questions about service configurations, errors you encountered
 during setup, or recommendations for this repo, feel free to reach out via
-the contacts on my profile.
-
-[![Static Badge](https://img.shields.io/badge/Profile-E36256?style=for-the-badge)](https://github.com/Nico-Hei)
-
+the contacts on my [profile](https://github.com/Nico-Hei).
