@@ -25,3 +25,5 @@ An AAAA-Record would indicate IPv6.
 `PROXIED=false` is required because Cloudflare does not support tunneling UDP traffic,
 which is needed for WireGuard VPN. Proxying through Cloudflare would
 hide the public IP from third parties.
+
+[![Static Badge](https://img.shields.io/badge/Go%20back-B0B0B0?style=for-the-badge)](../../README.md)
