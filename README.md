@@ -60,6 +60,11 @@ In truenas network settings:
 - DNS server: 192.168.1.1 (My routers dns server)
 - Default gateway: 192.168.1.1
 
+#### 4.2.2 GUI
+In truenas general settings:
+- web interface port: http 80 -> 8080 https 443 -> 4443 (Nginx uses these ports)
+
+
 #### 4.2.2 Docker networks
 
 ### 4.3 Storage and Datasets
@@ -79,7 +84,6 @@ Pool using 2 storage ssds in Mirror(Raid-1) "CrazyBigStorage"
 
 ## 5. Todo
 1. Email alerts
-2. Change GUI port of truenas to be able to use port 80 specificly for Nginx Proxy Manager
    
 ---
 If you have any questions about service configurations, errors you encountered
