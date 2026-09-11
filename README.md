@@ -63,19 +63,19 @@ In truenas network settings:
 #### 4.2.2 Docker networks
 
 ### 4.3 Storage and Datasets
-#### Storage
+#### 4.3.1 Storage
 Pool using 2 storage ssds in Mirror(Raid-1) "CrazyBigStorage"
 
-#### Datasets
+#### 4.3.2 Datasets
 1. "Public" (SMB preset) a non password protected share used to send rescources between my devices
   Permissions:
     NFS4_Open preset
-1.2 "Files" (SMB preset) my private files which should only be accessabile through my own (non admin) account
+2. "Files" (SMB preset) my private files which should only be accessabile through my own (non admin) account
   Permissions:
     NFS4_Restricted preset
     Groups:
       files_access (Full Control)
-1.3 "Container" (Apps preset) used for my docker services
+3. "Container" (Apps preset) used for my docker services
 
 ## 5. Todo
 1. Email alerts
