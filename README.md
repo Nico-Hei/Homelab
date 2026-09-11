@@ -67,7 +67,6 @@ In truenas network settings:
 Pool using 2 storage ssds in Mirror(Raid-1) "CrazyBigStorage"
 
 #### Datasets
-## Datasets
 1. "Public" (SMB preset) a non password protected share used to send rescources between my devices
   Permissions:
     NFS4_Open preset
