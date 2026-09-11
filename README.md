@@ -30,9 +30,58 @@ to learn a bit more about permission management using ACL's. I am still going to
   2. 2× Lexar NS100 1TB SATA SSDs
      > Configured as a RAID-1 mirror for redundant data storage.
  
-**TrueNAS setup:**
+## 4. TrueNAS
+### 4.1 Permissions
+#### 4.1.1 Users
+1. "truenas_admin" (locked) default user
+   Permissions:
+     Full Admin 
+3. "nico.admin" my admin user to configure everything
+   Permissions:
+     Full Admin 
+4. "nico" my user (non admin) for share access
+   Permissions:
+     SMB Access
+   Groups:
+     files_access
+6. "guest" used to access Public share
+   Permissions:
+     SMB Access
+   
+#### 4.1.2 Groups
+1. files_access (Used to access my private file share)
 
+### 4.2 Networking
+#### 4.2.1 Static IP
+In truenas network settings:
+- Interface: enp2s0
+- IP: 192.168.1.250/24
+- Autoconfigure IPv6 disabled (Iam not going to use IPv6 in my private network anytime soon)
+- DNS server: 192.168.1.1 (My routers dns server)
+- Default gateway: 192.168.1.1
 
+#### 4.2.2 Docker networks
+
+### 4.3 Storage and Datasets
+#### Storage
+Pool using 2 storage ssds in Mirror(Raid-1) "CrazyBigStorage"
+
+#### Datasets
+## Datasets
+1. "Public" (SMB preset) a non password protected share used to send rescources between my devices
+  Permissions:
+    NFS4_Open preset
+1.2 "Files" (SMB preset) my private files which should only be accessabile through my own (non admin) account
+  Permissions:
+    NFS4_Restricted preset
+    Groups:
+      files_access (Full Control)
+1.3 "Container" (Apps preset) used for my docker services
+
+## 5. Todo
+1. Email alerts
+2. Change GUI port of truenas to be able to use port 80 specificly for Nginx Proxy Manager
+   
 ---
 If you have any questions about service configurations, errors you encountered
 during setup, or recommendations for this repo, feel free to reach out via
