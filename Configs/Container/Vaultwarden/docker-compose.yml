@@ -7,8 +7,6 @@ services:
       DOMAIN: "https://vw.nicoshl.de"
     volumes:
       - /mnt/CrazyBigStorage/Container/Vaultwarden/data:/data
-    ports:
-      - "1000"
     networks:
       - r_proxy
 
