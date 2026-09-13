@@ -208,6 +208,7 @@ Pool using 2 storage SSDs in a mirror (RAID-1): "CrazyBigStorage"
 
 1. Email alerts
 2. Firewall Rules (Internal)
+3. Backups & Snapshots
 
 ---
 
