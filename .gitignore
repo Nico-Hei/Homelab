@@ -1,0 +1,4 @@
+*.env
+**/data/
+**/letsencrypt/
+# **/folder/ ignores all folders with that name not regarding its position in the file tree

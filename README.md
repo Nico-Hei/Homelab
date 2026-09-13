@@ -62,6 +62,10 @@ to learn a bit more about permission management using ACLs. I am still going to 
 
 ### Github Repo
 
+To use the configuration files from this repository, I clone the repository to my server (~) using a GitHub API key. For each container, I use /mnt/CrazyBigStorage/Container/ServiceName as the storage path.
+
+All container data is stored on a mirrored and regularly backed-up drive
+
 ### 4.2 Networking
 
 #### 4.2.1 Static IP
@@ -155,6 +159,10 @@ I configured the name servers of my domain to point to Cloudflare so that I can 
   2. `Name: * Type: CNAME Record Content: @` (@ = nicoshl.de, so *.nicoshl.de)
 
 #### 4.2.5 Nginx Proxy Manager
+Nginx Proxy Manager listens to the host ports:
+80 (host) -> 80 (local, tcp) : http
+81 (host) -> 81 (local, tcp) : web ui
+443 (host) -> 443 (local, tcp) : https
 
 #### 4.2.6 (Software) Firewall
 
