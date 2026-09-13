@@ -1,12 +1,18 @@
 services:
-  npm:
+  nginxproxymanager:
     image: 'jc21/nginx-proxy-manager:latest'
-    container_name: NPM
+    container_name: NginxProxyManager
     restart: unless-stopped
     ports:
       - '80:80'
       - '81:81'
       - '443:443'
     volumes:
-      - ./data:/data
-      - ./letsencrypt:/etc/letsencrypt
+      - /mnt/CrazyBigStorage/Container/NginxProxyManager/data:/data
+      - /mnt/CrazyBigStorage/Container/NginxProxyManager/letsencrypt:/etc/letsencrypt
+    networks:
+      - r_proxy
+
+networks:
+  r_proxy:
+    external: true
