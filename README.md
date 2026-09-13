@@ -172,6 +172,16 @@ Nginx Proxy Manager listens to the host ports:
 81 (host) -> 81 (local, tcp) : web ui
 443 (host) -> 443 (local, tcp) : https
 
+- To use Nginx Proxy Manager with https i need to set up my certificates via web ui:
+  Certificates -> Add Certificate -> Lets Encrypt via DNS
+  -> Domain Names: nicoshl.de & *.nicoshl.de -> Key Type: Default
+  -> DNS Provider: Cloudflare using access token -> Propagation Seconds: 120s
+
+- Now i can add domain entries for example proxy hosts:
+  ![ProxyHostsExample](https://github.com/Nico-Hei/Homelab/blob/main/Images/ProxyHostsExample1.png)
+  ![ProxyHostsExample2](https://github.com/Nico-Hei/Homelab/blob/main/Images/ProxyHostsExample2.png)
+
+
 #### 4.2.6 (Software) Firewall
 
 ### 4.3 Storage and Datasets
@@ -197,6 +207,7 @@ Pool using 2 storage SSDs in a mirror (RAID-1): "CrazyBigStorage"
 ## 5. Todo
 
 1. Email alerts
+2. Firewall Rules (Internal)
 
 ---
 

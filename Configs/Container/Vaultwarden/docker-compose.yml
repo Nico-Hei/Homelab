@@ -1,0 +1,17 @@
+services:
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: Vaultwarden
+    restart: unless-stopped
+    environment:
+      DOMAIN: "https://vw.nicoshl.de"
+    volumes:
+      - /mnt/CrazyBigStorage/Container/Vaultwarden/data:/data
+    ports:
+      - "1000"
+    networks:
+      - r_proxy
+
+networks:
+  r_proxy:
+    external: true
