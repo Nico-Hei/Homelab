@@ -62,9 +62,12 @@ to learn a bit more about permission management using ACLs. I am still going to 
 
 ### Github Repo
 
-To use the configuration files from this repository, I clone the repository to my server (~) using a GitHub API key. For each container, I use /mnt/CrazyBigStorage/Container/ServiceName as the storage path.
+To use the configuration files from this repository, I clone the repository to my server (~) using a GitHub Token. For each container, I use /mnt/CrazyBigStorage/Container/ServiceName as the storage path.
 
 All container data is stored on a mirrored and regularly backed-up drive
+
+For the Token i use following, minimal access, settings:
+![TokenSettings](https://github.com/Nico-Hei/Homelab/blob/main/Images/GithubTokenSettings.png)
 
 ### 4.2 Networking
 
