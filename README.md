@@ -220,6 +220,7 @@ After this add the secret into a new .env file
 6. Setup dashboard (Homarr)
 7. Setup Actual budget manager
 8. Test https://docs.paperless-ngx.com/
+9. Fix Overleaf
 
 ---
 
