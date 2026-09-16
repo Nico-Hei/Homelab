@@ -1,0 +1,20 @@
+# Can be enhanced with an additional compose file
+# See also https://docs.docker.com/compose/production/#modify-your-compose-file-for-production
+
+services:
+  radicale:
+    image: tomsquest/docker-radicale
+    container_name: Radicale
+    healthcheck:
+      test: curl -f https://calendar.nicoshl.de || exit 1
+      interval: 30s
+      retries: 3
+    restart: unless-stopped
+    volumes:
+      - /mnt/CrazyBigStorage/Container/Radicale/data:/data
+    networks:
+      - r_proxy
+  
+networks:
+  r_proxy:
+    external: true

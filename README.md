@@ -92,6 +92,9 @@ In TrueNAS general settings:
 
 - Web interface port: HTTP 80 -> 8080, HTTPS 443 -> 4443 (Nginx uses these ports)
 
+! Websocket support is required to be enabled in the nginx proxy manager entry or else 
+accessing true nas ui via domain results in infinite loading loop.
+
 #### 4.2.3 Docker Networks
 
 My reverse proxy is the highest-level container in my homelab. It should be the only one that has exposed ports on the host, so I create its own network.
@@ -209,6 +212,10 @@ Pool using 2 storage SSDs in a mirror (RAID-1): "CrazyBigStorage"
 1. Email alerts
 2. Firewall Rules (Internal)
 3. Backups & Snapshots
+4. Setup PiHole and filters
+5. Setup Tailscale with compose file as well as access control file
+6. Setup dashboard (Homarr)
+7. Setup Actual budget manager
 
 ---
 
