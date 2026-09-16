@@ -184,9 +184,6 @@ Nginx Proxy Manager listens to the host ports:
   ![ProxyHostsExample](https://github.com/Nico-Hei/Homelab/blob/main/Images/ProxyHostsExample1.png)
   ![ProxyHostsExample2](https://github.com/Nico-Hei/Homelab/blob/main/Images/ProxyHostsExample2.png)
 
-
-#### 4.2.6 (Software) Firewall
-
 ### 4.3 Storage and Datasets
 
 #### 4.3.1 Storage
@@ -216,6 +213,7 @@ Pool using 2 storage SSDs in a mirror (RAID-1): "CrazyBigStorage"
 5. Setup Tailscale with compose file as well as access control file
 6. Setup dashboard (Homarr)
 7. Setup Actual budget manager
+8. Test https://docs.paperless-ngx.com/
 
 ---
 
