@@ -204,7 +204,13 @@ Pool using 2 storage SSDs in a mirror (RAID-1): "CrazyBigStorage"
 
 3. "Container" (Apps preset) used for my Docker services
 
-## 5. Todo
+## 5. Services
+### 5.1 Overleaf
+`openssl rand -base64 32``(On the server), generates OVERLEAF_INVITE_TOKEN_SECRET
+
+After this add the secret into a new .env file
+
+## 6. Todo
 
 1. Email alerts
 2. Firewall Rules (Internal)

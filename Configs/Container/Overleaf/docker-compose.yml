@@ -22,7 +22,7 @@ services:
       REDIS_HOST: redis
 
       # IMPORTANT: Required for invite token generation
-      # OVERLEAF_INVITE_TOKEN_SECRET: generate with `openssl rand -base64 32`
+      OVERLEAF_INVITE_TOKEN_SECRET: ${OVERLEAF_INVITE_TOKEN_SECRET}
 
       ENABLED_LINKED_FILE_TYPES: "project_file,project_output_file"
 
