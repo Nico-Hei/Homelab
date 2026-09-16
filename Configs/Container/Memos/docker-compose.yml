@@ -1,0 +1,19 @@
+services:
+  memos:
+    image: neosmemo/memos:stable
+    container_name: Memos
+    restart: unless-stopped
+    volumes:
+      - /mnt/CrazyBigStorage/Container/Memos/data:/var/opt/memos
+    ports:
+      - "5230"
+    environment:
+      MEMOS_PORT: 5230
+      MEMOS_DRIVER: sqlite
+      MEMOS_INSTANCE_URL: https://notes.nicoshl.de
+    networks:
+      - r_proxy
+
+networks:
+  r_proxy:
+    external: true
