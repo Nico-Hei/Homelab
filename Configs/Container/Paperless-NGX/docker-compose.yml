@@ -1,0 +1,55 @@
+services:
+  broker:
+    image: valkey/valkey:9-alpine
+    container_name: paperless-broker
+    restart: unless-stopped
+    networks:
+      - paperless_internal
+    volumes:
+      - /mnt/CrazyBigStorage/Container/Paperless-NGX/redis:/data
+
+  db:
+    image: postgres:18
+    container_name: paperless-db
+    restart: unless-stopped
+    networks:
+      - paperless_internal
+    environment:
+      POSTGRES_DB: paperless
+      POSTGRES_USER: paperless
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - /mnt/CrazyBigStorage/Container/Paperless-NGX/postgres:/var/lib/postgresql/data
+
+  paperless:
+    image: ghcr.io/paperless-ngx/paperless-ngx:latest
+    container_name: paperless
+    restart: unless-stopped
+    depends_on:
+      - db
+      - broker
+
+    networks:
+      - r_proxy
+      - paperless_internal
+
+    env_file:
+      - .env
+
+    environment:
+      PAPERLESS_REDIS: redis://broker:6379
+      PAPERLESS_DBHOST: db
+      PAPERLESS_DBENGINE: postgresql
+
+    volumes:
+      - /mnt/CrazyBigStorage/Container/Paperless-NGX/data:/usr/src/paperless/data
+      - /mnt/CrazyBigStorage/Container/Paperless-NGX/media:/usr/src/paperless/media
+      - /mnt/CrazyBigStorage/Container/Paperless-NGX/export:/usr/src/paperless/export
+      - /mnt/CrazyBigStorage/Files/Scans:/usr/src/paperless/consume
+
+networks:
+  r_proxy:
+    external: true
+
+  paperless_internal:
+    internal: true

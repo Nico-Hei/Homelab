@@ -206,21 +206,25 @@ Pool using 2 storage SSDs in a mirror (RAID-1): "CrazyBigStorage"
 
 ## 5. Services
 ### 5.1 Overleaf
-`openssl rand -base64 32``(On the server), generates OVERLEAF_INVITE_TOKEN_SECRET
+`https://github.com/overleaf/toolkit.git`(To the storage location)(/home/nico.admin)
 
-After this add the secret into a new .env file
+`cd toolkit`
+
+`sudo bash bin/init`(/home ist in the noexec group and throws and error when running without bash arg)
+
+`sudo bash bin/up` to start overleaf (The script uses docker compose)
 
 ## 6. Todo
 
 1. Email alerts
-2. Firewall Rules (Internal)
-3. Backups & Snapshots
-4. Setup PiHole and filters
-5. Setup Tailscale with compose file as well as access control file
-6. Setup dashboard (Homarr)
-7. Setup Actual budget manager
-8. Test https://docs.paperless-ngx.com/
-9. Fix Overleaf
+2. Backups & Snapshots
+3. Setup PiHole and filters
+4. Setup Tailscale with compose file as well as access control file
+5. Setup dashboard (Homarr)
+6. Setup Actual budget manager
+7. Test https://docs.paperless-ngx.com/
+8. Fix Overleaf
+9. Disable Immich's ai features -> more available ram
 
 ---
 
