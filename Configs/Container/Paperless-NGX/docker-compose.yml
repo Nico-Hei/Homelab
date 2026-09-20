@@ -9,7 +9,7 @@ services:
       - /mnt/CrazyBigStorage/Container/Paperless-NGX/redis:/data
 
   db:
-    image: postgres:18
+    image: postgres:17
     container_name: paperless-db
     restart: unless-stopped
     networks:
@@ -40,6 +40,7 @@ services:
       PAPERLESS_REDIS: redis://broker:6379
       PAPERLESS_DBHOST: db
       PAPERLESS_DBENGINE: postgresql
+      PAPERLESS_DBPASS: ${POSTGRES_PASSWORD}
 
     volumes:
       - /mnt/CrazyBigStorage/Container/Paperless-NGX/data:/usr/src/paperless/data

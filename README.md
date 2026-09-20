@@ -222,9 +222,8 @@ Pool using 2 storage SSDs in a mirror (RAID-1): "CrazyBigStorage"
 4. Setup Tailscale with compose file as well as access control file
 5. Setup dashboard (Homarr)
 6. Setup Actual budget manager
-7. Test https://docs.paperless-ngx.com/
-8. Fix Overleaf
-9. Disable Immich's ai features -> more available ram
+7. Fix Overleaf
+8. Disable Immich's ai features -> more available ram
 
 ---
 
