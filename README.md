@@ -168,6 +168,7 @@ I configured the name servers of my domain to point to Cloudflare so that I can 
 - DNS Entries:
   1. `Name: nicoshl.de Type: A Record Content: 192.168.1.250`
   2. `Name: * Type: CNAME Record Content: @` (@ = nicoshl.de, so *.nicoshl.de)
+  3. `Name: gateway Type: A Record Content: 192.168.1.251`
 
 #### 4.2.5 Nginx Proxy Manager
 Nginx Proxy Manager listens to the host ports:
@@ -204,8 +205,98 @@ Pool using 2 storage SSDs in a mirror (RAID-1): "CrazyBigStorage"
 
 3. "Container" (Apps preset) used for my Docker services
 
-## 5. Services
-### 5.1 Overleaf
+## 5. VMs
+### 5.1 Gateway
+First I need to create a new bridge interface for the vm to be able to communicate with the host via ip. (For referenz look at Images/BridgeConfigs)
+
+| Setting | Value |
+|----------|--------|
+| Name | Gateway |
+| OS | Debian 13.7.0 |
+| vCPUs | 1 |
+| CPU Mode | Host passthrough |
+| Display | VNC |
+| RAM | 1 GB |
+| Disk | 10 GB |
+| Network | Bridged (Virtio) |
+Via VNC:
+| Language | English |
+| Region | Europe/Germany |
+| Locales | US |
+| Keymap | German |
+| Hostname | gateway |
+| Root | No password (Initial admin user will become root) |
+| Initial user | nico, password: changeme (i will change this as soon as i can copy paste via ssh) |
+| Disk | Use entire disk, all files in one partition |
+| Software | standard system utilities, ssh server |
+
+After the installation is complete, stop the VM and remove the CD-Rom device containing the boot medium.
+
+Login with local user (admin) and change temp password
+`passwd`
+
+Next lets configure a **static ip**:
+`sudo nano /etc/network/interfaces`
+
+Paste content of VMs/Gateway/Configs/interfaces
+(I disabled auto ipv6 adresses because iam only going to use ipv4 adresses for my homelab)
+
+Restart networking and pray:
+`sudo systemctl restart networking`
+
+If this worked restart the system, in my case to fully remove the old ip address.
+
+Because my vm couldnt connect to the internet i had to manually change the `cat /etc/resolv.conf` file to VMs/Gateway/Configs/resolv.conf
+
+Next we are going to setup **shh keys** for our admin user:
+
+First lets generate a new key pair (On your pc) `ssh-keygen -t ed25519 -C "nico@gateway"` Enter(Default Location), Enter(No passphrase), Enter(No passphrase)
+
+Next copy the public key from your pc `cat .\id_ed25519.pub`
+
+On the server:
+`mkdir -p ~/.ssh`
+`chmod 700 ~/.ssh`
+`nano ~/.ssh/authorized_keys` paste key
+`chmod 600 ~/.ssh/authorized_keys`
+`chown -R nico:nico ~/.ssh`
+
+Test the connection via keyfile (I had to convert the private key via puttygen to be able to use it with putty)
+
+Disable password login:
+`sudo nano /etc/ssh/sshd_config`
+Paste content of VMs/Gateway/Configs/sshd_config
+
+Restart ssh services `sudo systemctl restart ssh`
+
+! QUICK SNAPSHOT !
+
+## 6. Services
+### 6.1 Tailscale
+**ON GATEWAY VM**
+`sudo apt install curl`
+
+`curl -fsSL https://tailscale.com/install.sh | sh`
+
+`sudo tailscale up --ssh`
+
+`tailscale status` if server gets recognized:
+
+Activate IP forwarding:
+`sudo nano /etc/sysctl.conf` paste VMs/Gateway/Configs/systctl.conf
+
+`sudo sysctl -p`
+
+```
+sudo tailscale up \
+  --advertise-routes=192.168.1.0/24 \
+  --ssh
+```
+
+Accept connection under gateway->subnets
+
+
+### 6.2 Overleaf
 `https://github.com/overleaf/toolkit.git`(To the storage location)(/home/nico.admin)
 
 `cd toolkit`
@@ -217,14 +308,12 @@ Pool using 2 storage SSDs in a mirror (RAID-1): "CrazyBigStorage"
 ## 6. Todo
 
 1. Email alerts
-2. Backups & Snapshots
+2. Backups & Snapshots(Encrypt data while uploading to storage box)
 3. Setup PiHole and filters
-4. Setup Tailscale with compose file as well as access control file
-5. Setup dashboard (Homarr)
-6. Setup Actual budget manager
-7. Fix Overleaf
-8. Disable Immich's ai features -> more available ram
-
+4. Setup dashboard (Homarr)
+5. Setup Actual budget manager
+6. Fix Overleaf
+7. VM: Gateway Firewall
 ---
 
 If you have any questions about service configurations, errors you encountered
