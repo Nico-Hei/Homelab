@@ -13,4 +13,12 @@ services:
     volumes:
       - /mnt/CrazyBigStorage/Container/LaTeX/config:/config
       - /mnt/CrazyBigStorage/Files/LaTeX:/config/workspace
+    ports:
+      - 8443
     restart: unless-stopped
+    networks:
+      - r_proxy
+
+networks:
+  r_proxy:
+    external: true
