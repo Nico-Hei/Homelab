@@ -313,22 +313,23 @@ sudo tailscale up \
 Accept connection under gateway->subnets
 
 
-### 6.2 Overleaf
-`https://github.com/overleaf/toolkit.git`(To the storage location)(/home/nico.admin)
+### 6.2 LaTeX-Editor
+After starting the Docker Compose container located in `Containers/LaTeX-Editor`, a few additional components need to be installed on the visual studio code server.
 
-`cd toolkit`
+First, install the **LaTeX Workshop** extension in Visual Studio Code.
 
-`sudo bash bin/init`(/home ist in the noexec group and throws and error when running without bash arg)
+Afterwards, install the complete TeX Live distribution by running the following command:
 
-`sudo bash bin/up` to start overleaf (The script uses docker compose)
+```bash
+sudo apt update && sudo apt install -y texlive-full
+```
 
 ## 6. Todo
 
 1. Backups & Snapshots(Encrypt data while uploading to storage box)
 2. Setup PiHole and filters
 3. Setup dashboard (Homarr)
-4. Setup Actual budget manager
-5. Fix Overleaf
+(4. Setup Actual budget manager)
 ---
 
 If you have any questions about service configurations, errors you encountered

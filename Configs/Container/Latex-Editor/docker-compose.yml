@@ -1,0 +1,16 @@
+services:
+  latex-editor:
+    image: lscr.io/linuxserver/code-server:latest
+    container_name: Latex-Editor
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Berlin
+      - PASSWORD=${PASSWORD}
+      - SUDO_PASSWORD=${PASSWORD}
+      - PROXY_DOMAIN=latex.nicoshl.de
+      - DEFAULT_WORKSPACE=/config/workspace
+    volumes:
+      - /mnt/CrazyBigStorage/Container/LaTeX/config:/config
+      - /mnt/CrazyBigStorage/Files/LaTeX:/config/workspace
+    restart: unless-stopped
