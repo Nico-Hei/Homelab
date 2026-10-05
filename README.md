@@ -321,7 +321,7 @@ First, install the **LaTeX Workshop** extension in Visual Studio Code.
 Afterwards, install the complete TeX Live distribution by running the following command:
 
 ```bash
-sudo apt update && sudo apt install -y texlive-full
+sudo apt update && sudo apt install -y texlive-full latexmk
 ```
 
 ## 6. Todo
