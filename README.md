@@ -34,6 +34,22 @@ to learn a bit more about permission management using ACLs. I am still going to 
 
 ## 4. TrueNAS
 
+### 4.0 Alerts
+For alert notifications, I decided to use Discord because I already use it on my phone. Since TrueNAS SCALE supports Slack notifications, Discord webhooks can be used as a compatible endpoint.
+
+First, I created a Discord server. I then set up an `Alerts` role and a dedicated `alerts` channel. The channel is only visible to users with the `Alerts` role, preventing unauthorized access to alert messages and server content.
+
+Next, I created a Discord webhook in the `alerts` channel.
+
+After creating the webhook, append `/slack` to the webhook URL so that it is recognized as a Slack-compatible endpoint: `https://discord.com/api/webhooks/1234567890/abcdefg/slack`
+
+After completing these steps, I configured Slack notifications in TrueNAS SCALE.
+I used the following settings:
+![Discord_Alerts_Settings](https://github.com/Nico-Hei/Homelab/blob/main/Images/Discord_Alert_Settings.png)
+
+The test notification appears as shown below:
+![Discord_Alerts_Test](https://github.com/Nico-Hei/Homelab/blob/main/Images/Discord_Alert_Test.png)
+
 ### 4.1 Permissions
 
 #### 4.1.1 Users
@@ -307,13 +323,11 @@ Accept connection under gateway->subnets
 
 ## 6. Todo
 
-1. Email alerts
-2. Backups & Snapshots(Encrypt data while uploading to storage box)
-3. Setup PiHole and filters
-4. Setup dashboard (Homarr)
-5. Setup Actual budget manager
-6. Fix Overleaf
-7. VM: Gateway Firewall
+1. Backups & Snapshots(Encrypt data while uploading to storage box)
+2. Setup PiHole and filters
+3. Setup dashboard (Homarr)
+4. Setup Actual budget manager
+5. Fix Overleaf
 ---
 
 If you have any questions about service configurations, errors you encountered
