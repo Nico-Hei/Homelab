@@ -48,6 +48,7 @@ I used the following settings:
 ![Discord_Alerts_Settings](https://github.com/Nico-Hei/Homelab/blob/main/Images/Discord_Alert_Settings.png)
 
 The test notification appears as shown below:
+
 ![Discord_Alerts_Test](https://github.com/Nico-Hei/Homelab/blob/main/Images/Discord_Alert_Test.png)
 
 ### 4.1 Permissions
